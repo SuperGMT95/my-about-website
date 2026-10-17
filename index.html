@@ -10,21 +10,17 @@
   
   <style>
     :root {
-      --bg: #05070c;
-      --bg-surface: #0a0e17;
-      --bg-card: rgba(13, 18, 30, 0.72);
-      --bg-card-hover: rgba(20, 28, 48, 0.88);
+      --bg: #030712;
+      --bg-card: rgba(11, 17, 32, 0.75);
+      --bg-card-hover: rgba(15, 23, 42, 0.9);
       --border: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(56, 189, 248, 0.4);
       --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.35);
-      --accent-purple: #a855f7;
-      --accent-green: #22c55e;
-      --accent-gold: #f59e0b;
-      --accent-red: #ef4444;
-      --text: #f1f5f9;
+      --accent-glow: rgba(56, 189, 248, 0.45);
+      --accent-purple: #c084fc;
+      --accent-green: #34d399;
+      --accent-gold: #fbbf24;
+      --text: #f8fafc;
       --text-muted: #94a3b8;
-      --text-dark: #64748b;
     }
 
     * {
@@ -49,7 +45,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: linear-gradient(180deg, rgba(5, 7, 12, 0.88) 0%, rgba(5, 7, 12, 0.94) 100%), 
+      background: linear-gradient(180deg, rgba(3, 7, 18, 0.92) 0%, rgba(3, 7, 18, 0.96) 100%), 
                   url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTBoZzF2amxxcnliMjVjc3VxeTZnOGh2ejRucjkydjdkMXJmenZidSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4rZA5D22301iMgrUNd/giphy.gif') center/cover no-repeat;
       z-index: -2;
       pointer-events: none;
@@ -57,10 +53,10 @@
 
     .cursor-torch {
       position: fixed;
-      width: 450px;
-      height: 450px;
+      width: 480px;
+      height: 480px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 65%);
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: -1;
@@ -77,7 +73,7 @@
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: rgba(10, 14, 23, 0.92);
+      background: rgba(10, 15, 29, 0.92);
       border: 1px solid var(--accent);
       backdrop-filter: blur(16px);
       border-radius: 50px;
@@ -117,11 +113,6 @@
       color: var(--text-muted);
       font-size: 11px;
       border: 1px solid var(--border);
-    }
-
-    .audio-btn.prev-next:hover {
-      color: var(--accent);
-      border-color: var(--accent);
     }
 
     .audio-title {
@@ -171,7 +162,7 @@
     header {
       position: sticky;
       top: 0;
-      background: rgba(5, 7, 12, 0.85);
+      background: rgba(3, 7, 18, 0.88);
       backdrop-filter: blur(16px);
       z-index: 100;
       border-bottom: 1px solid var(--border);
@@ -239,7 +230,7 @@
       padding: 8px 18px;
       border-radius: 8px;
       background: rgba(56, 189, 248, 0.1);
-      border: 1px solid var(--border-accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       color: var(--accent) !important;
       font-weight: 600;
     }
@@ -249,28 +240,42 @@
       color: #050811 !important;
     }
 
+    /* CONTINUOUS ROLLING MARQUEE TICKER (SCREENSHOT 1 & 2) */
     .marquee-container {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
-      padding: 12px 0;
-      background: rgba(56, 189, 248, 0.03);
+      padding: 14px 0;
+      background: rgba(8, 14, 26, 0.75);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       position: relative;
     }
 
     .marquee-content {
-      display: inline-block;
-      animation: marqueeScroll 22s linear infinite;
-      font-family: 'Fira Code', monospace;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      animation: marqueeScroll 25s linear infinite;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #cbd5e1;
     }
 
-    .marquee-content span {
-      color: var(--accent);
-      margin: 0 20px;
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .marquee-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #c084fc;
+      margin-right: 18px;
+      box-shadow: 0 0 8px #c084fc;
+      flex-shrink: 0;
     }
 
     @keyframes marqueeScroll {
@@ -292,7 +297,7 @@
       gap: 8px;
       padding: 6px 14px;
       background: rgba(56, 189, 248, 0.08);
-      border: 1px solid var(--border-accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       border-radius: 30px;
       color: var(--accent);
       font-family: 'Fira Code', monospace;
@@ -325,7 +330,7 @@
     }
 
     .hero h1 span.gradient {
-      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 50%, #f43f5e 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #c084fc 50%, #f43f5e 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -376,12 +381,6 @@
       transition: all 0.25s ease;
     }
 
-    .btn-secondary:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-accent);
-      transform: translateY(-2px);
-    }
-
     .terminal-box {
       background: rgba(9, 13, 22, 0.9);
       border: 1px solid var(--border);
@@ -413,11 +412,6 @@
     .t-red { background: #ef4444; }
     .t-yellow { background: #eab308; }
     .t-green { background: #22c55e; }
-
-    .terminal-title {
-      font-size: 0.8rem;
-      color: var(--text-dark);
-    }
 
     .terminal-content {
       padding: 22px;
@@ -461,60 +455,83 @@
       color: #fff;
     }
 
+    /* TEAM GRID (SCREENSHOT 4 STYLE) */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
       margin-bottom: 70px;
     }
 
     .team-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 20px;
+      border-radius: 18px;
+      padding: 30px 18px 24px;
       text-align: center;
       position: relative;
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      backdrop-filter: blur(12px);
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .team-card::after {
+    .team-card::before {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
+      top: -1px;
+      left: 20%;
+      right: 20%;
+      height: 2px;
       background: linear-gradient(90deg, transparent, var(--accent), transparent);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
 
     .team-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--border-accent);
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.4);
       background: var(--bg-card-hover);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px var(--accent-glow);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.2);
     }
 
-    .team-card:hover::after {
+    .team-card.active {
+      border-color: var(--accent) !important;
+      background: rgba(14, 25, 45, 0.95) !important;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 30px var(--accent-glow) !important;
+      transform: translateY(-8px);
+    }
+
+    .team-card.active::before {
       opacity: 1;
     }
 
-    .team-avatar {
-      width: 75px;
-      height: 75px;
+    .avatar-wrapper {
+      position: relative;
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
-      margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      background: rgba(56, 189, 248, 0.08);
-      border: 2px solid var(--border-accent);
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+      padding: 3px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.8), rgba(192, 132, 252, 0.5));
+      margin-bottom: 18px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card:hover .avatar-wrapper, .team-card.active .avatar-wrapper {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+    }
+
+    .team-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      background: #0b1120;
     }
 
     .team-name {
@@ -522,29 +539,30 @@
       font-size: 1.25rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .team-role {
       display: inline-block;
       padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-family: 'Fira Code', monospace;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
     }
 
     .role-owner {
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.4);
+      background: rgba(251, 191, 36, 0.12);
+      border: 1px solid rgba(251, 191, 36, 0.4);
       color: var(--accent-gold);
     }
 
     .role-coowner {
-      background: rgba(168, 85, 247, 0.15);
-      border: 1px solid rgba(168, 85, 247, 0.4);
+      background: rgba(192, 132, 252, 0.15);
+      border: 1px solid rgba(192, 132, 252, 0.4);
       color: var(--accent-purple);
     }
 
@@ -555,11 +573,18 @@
     }
 
     .role-staff {
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.4);
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.4);
       color: var(--accent-green);
     }
 
+    .team-subtext {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* SERVICES GRID (SCREENSHOT 3 STYLE) */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -570,82 +595,76 @@
     .service-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 30px;
       position: relative;
-      transition: all 0.3s ease;
       cursor: pointer;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
     }
 
     .service-card:hover {
       border-color: var(--accent);
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.3);
     }
 
-    .service-icon {
-      font-size: 28px;
-      margin-bottom: 15px;
-      display: inline-block;
+    .service-card.active-service {
+      border-color: var(--accent);
+      background: rgba(14, 25, 45, 0.95);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px var(--accent-glow);
+    }
+
+    .service-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
     }
 
     .service-card h4 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: #fff;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .service-card p {
       color: var(--text-muted);
       font-size: 0.92rem;
       line-height: 1.6;
+      margin-bottom: 20px;
     }
 
-    .node-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 70px;
-    }
-
-    .node-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .node-card h5 {
-      font-size: 1.1rem;
-      color: var(--accent);
-      font-family: 'Space Grotesk', sans-serif;
-      margin-bottom: 12px;
-    }
-
-    .node-card ul {
-      list-style: none;
-    }
-
-    .node-card ul li {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+    .service-pills {
       display: flex;
-      align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .node-card ul li::before {
-      content: '⚡';
-      font-size: 10px;
+    .service-pill {
+      font-size: 0.72rem;
+      font-family: 'Fira Code', monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
       color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 50px 0 35px;
-      background: rgba(5, 7, 12, 0.95);
+      padding: 45px 0 35px;
+      background: rgba(3, 7, 18, 0.96);
     }
 
     .footer-wrapper {
@@ -658,28 +677,31 @@
       color: var(--text-muted);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
         padding: 50px 0;
       }
-      .services-grid, .node-grid {
+      .team-grid {
         grid-template-columns: 1fr;
       }
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.2rem;
+      .services-grid {
+        grid-template-columns: 1fr;
       }
       .audio-player-bar {
         bottom: 14px;
         right: 14px;
         left: 14px;
         justify-content: space-between;
-      }
-      .audio-title {
-        max-width: 110px;
       }
     }
   </style>
@@ -720,23 +742,30 @@
           <a href="#about">About</a>
           <a href="#team">Our Team</a>
           <a href="#services">Services</a>
-          <a href="#nodes">Nodes</a>
           <a href="https://coremmc.cloud" target="_blank" class="btn-header">Panel ↗</a>
         </nav>
       </div>
     </div>
   </header>
 
+  <!-- ROLLING MARQUEE TICKER (SCREENSHOT 1 & 2) -->
   <div class="marquee-container">
     <div class="marquee-content">
-      <span>●</span> COREMMC HOSTING 2026 ROLLOUT
-      <span>●</span> AMD RYZEN 9 7950X NODES
-      <span>●</span> 256GB DDR5 ECC RAM POOLS
-      <span>●</span> SUB-15MS MUMBAI & NOIDA ROUTES
-      <span>●</span> ZERO PACKET LOSS & LOCKED 20 TPS
-      <span>●</span> PELICAN & PTERODACTYL ECOSYSTEM
-      <span>●</span> BEDROCK & JAVA FLUID PARITY
-      <span>●</span> 24/7 DEDICATED SUPPORT SQUAD
+      <div class="marquee-item"><span class="marquee-dot"></span> 256GB DDR5 ECC RAM POOLS</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> SUB-15MS MUMBAI & NOIDA ROUTES</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> ZERO PACKET LOSS & LOCKED 20 TPS</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> PELICAN & PTERODACTYL ECOSYSTEM</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> BEDROCK & JAVA FLUID PARITY</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> AMD RYZEN 9 7950X DEDICATED HARDWARE</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE & VM MANAGEMENT</div>
+      <!-- Loop duplicate -->
+      <div class="marquee-item"><span class="marquee-dot"></span> 256GB DDR5 ECC RAM POOLS</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> SUB-15MS MUMBAI & NOIDA ROUTES</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> ZERO PACKET LOSS & LOCKED 20 TPS</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> PELICAN & PTERODACTYL ECOSYSTEM</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> BEDROCK & JAVA FLUID PARITY</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> AMD RYZEN 9 7950X DEDICATED HARDWARE</div>
+      <div class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE & VM MANAGEMENT</div>
     </div>
   </div>
 
@@ -774,107 +803,129 @@
       </div>
     </section>
 
+    <!-- OFFICIAL TEAM ROSTER WITH CLICK SELECTION (SCREENSHOT 4) -->
     <section class="section-head" id="team">
-      <span class="section-tag">01 · Leadership & Squad</span>
+      <span class="section-tag">01 · LEADERSHIP & SQUAD</span>
       <h2 class="section-title">CoreMMC Official Team</h2>
     </section>
 
     <div class="team-grid">
-      <div class="team-card">
-        <div class="team-avatar">👑</div>
+      <!-- SuperGMT95 -->
+      <div class="team-card active" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/C5cWbV81/copilot-image-1740728804368.jpg" alt="SuperGMT95" class="team-avatar-img">
+        </div>
         <div class="team-name">SuperGMT95</div>
-        <span class="team-role role-owner">Founder & Owner</span>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Infrastructure Architect & SysAdmin</p>
+        <span class="team-role role-owner">FOUNDER & OWNER</span>
+        <p class="team-subtext">Infrastructure Architect & SysAdmin</p>
       </div>
 
-      <div class="team-card">
-        <div class="team-avatar">⚡</div>
+      <!-- KingStone -->
+      <div class="team-card" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/xSKTkqwb/Screenshot-2026-10-18-001314.png" alt="KingStone" class="team-avatar-img">
+        </div>
         <div class="team-name">KingStone</div>
-        <span class="team-role role-coowner">Co-Owner</span>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Operations & Community Lead</p>
+        <span class="team-role role-coowner">CO-OWNER</span>
+        <p class="team-subtext">Operations & Community Lead</p>
       </div>
 
-      <div class="team-card">
-        <div class="team-avatar">🥷</div>
+      <!-- NeoNinja -->
+      <div class="team-card" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/nq0wYDth/Screenshot-2026-10-18-001239.png" alt="NeoNinja" class="team-avatar-img">
+        </div>
         <div class="team-name">NeoNinja</div>
-        <span class="team-role role-coowner">Co-Owner</span>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Network Security & Deployments</p>
+        <span class="team-role role-coowner">CO-OWNER</span>
+        <p class="team-subtext">Network Security & Deployments</p>
       </div>
 
-      <div class="team-card">
-        <div class="team-avatar">🛡️</div>
+      <!-- Redrexy -->
+      <div class="team-card" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/JWM3FHht/Screenshot-2026-10-18-001748.png" alt="Redrexy" class="team-avatar-img">
+        </div>
         <div class="team-name">Redrexy</div>
-        <span class="team-role role-manager">Manager</span>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Server Management & Quality</p>
+        <span class="team-role role-manager">MANAGER</span>
+        <p class="team-subtext">Server Management & Quality</p>
       </div>
 
-      <div class="team-card">
-        <div class="team-avatar">⚙️</div>
+      <!-- Nawaz -->
+      <div class="team-card" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/QF37xPsZ/Screenshot-2026-10-18-001911.png" alt="Nawaz" class="team-avatar-img">
+        </div>
         <div class="team-name">Nawaz</div>
-        <span class="team-role role-staff">Staff Member</span>
-        <p style="font-size:0.85rem; color:var(--text-muted); margin-top:12px;">Client Support & Node Dispatch</p>
+        <span class="team-role role-staff">STAFF MEMBER</span>
+        <p class="team-subtext">Client Support & Node Dispatch</p>
       </div>
     </div>
 
+    <!-- WHAT WE BUILD / SERVICES (SCREENSHOT 3) -->
     <section class="section-head" id="services">
-      <span class="section-tag">02 · Capabilities</span>
-      <h2 class="section-title">What Powers Our Network</h2>
+      <span class="section-tag">02 · WHAT WE BUILD</span>
+      <h2 class="section-title">Services & Specialties</h2>
     </section>
 
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🎮</div>
-        <h4>High-Clock Game Cloud</h4>
-        <p>AMD Ryzen 9 processors delivering relentless single-core speed to guarantee zero TPS loss during intense world-loading and peak player sessions.</p>
+      <div class="service-card" onclick="activateService(this)">
+        <div class="service-icon-box">🖥️</div>
+        <h4>VM & Container Panels</h4>
+        <p>Custom LXC, KVM and Docker management panels with multi-node support, real-time monitoring, and clean modern UIs.</p>
+        <div class="service-pills">
+          <span class="service-pill">HVM PANEL</span>
+          <span class="service-pill">LXC / KVM</span>
+        </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🪽</div>
-        <h4>Pelican & Pterodactyl Panels</h4>
-        <p>Streamlined game server panels with live console analytics, fast SFTP access, Docker isolation, and one-click database allocations.</p>
+      <div class="service-card" onclick="activateService(this)">
+        <div class="service-icon-box">🦖</div>
+        <h4>Pterodactyl & Pelican Extensions</h4>
+        <p>Custom addons, themes, blueprint installers and panel automation built for game hosting providers running modern nodes.</p>
+        <div class="service-pills">
+          <span class="service-pill">PELICAN</span>
+          <span class="service-pill">PTERODACTYL</span>
+        </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🤖</div>
-        <h4>Discord Automation Bots</h4>
-        <p>Custom Node.js bots managing automated hourly/daily backups, uptime alerts, and instant player metrics directly inside Discord.</p>
-      </div>
-    </div>
-
-    <section class="section-head" id="nodes">
-      <span class="section-tag">03 · Physical Fleet</span>
-      <h2 class="section-title">Global & Domestic Nodes</h2>
-    </section>
-
-    <div class="node-grid">
-      <div class="node-card">
-        <h5>🇮🇳 Mumbai Node</h5>
-        <ul>
-          <li>AMD Ryzen 9 Flagship</li>
-          <li>128GB DDR5 ECC Memory</li>
-          <li>Gen4 NVMe Solid State Drives</li>
-          <li>Direct Jio/Airtel IX Latency</li>
-        </ul>
+      <div class="service-card" onclick="activateService(this)">
+        <div class="service-icon-box">🤖</div>
+        <h4>Discord Bots & Automation</h4>
+        <p>Node.js and Python bots for automated hourly backups, node uptime tracking, and real-time community server management.</p>
+        <div class="service-pills">
+          <span class="service-pill">NODE.JS</span>
+          <span class="service-pill">VPS DEPLOY</span>
+        </div>
       </div>
 
-      <div class="node-card">
-        <h5>🇮🇳 Noida / Delhi Node</h5>
-        <ul>
-          <li>AMD Ryzen 7 Enterprise</li>
-          <li>128GB High-Frequency RAM</li>
-          <li>RAID-1 Enterprise Mirrored NVMe</li>
-          <li>North India Optimal Routing</li>
-        </ul>
+      <div class="service-card" onclick="activateService(this)">
+        <div class="service-icon-box">📊</div>
+        <h4>Status & Monitoring Pages</h4>
+        <p>Self-hosted status dashboards, uptime monitoring, and incident reporting tools with instant Discord notification pings.</p>
+        <div class="service-pills">
+          <span class="service-pill">STATUS PAGE</span>
+          <span class="service-pill">UPTIME MONITOR</span>
+        </div>
       </div>
 
-      <div class="node-card">
-        <h5>🇸🇬 Singapore Hub</h5>
-        <ul>
-          <li>Intel Enterprise Multi-Core</li>
-          <li>256GB High-Density RAM</li>
-          <li>Redundant 10Gbps Oceanic Transit</li>
-          <li>45ms Average SEA Ping</li>
-        </ul>
+      <div class="service-card" onclick="activateService(this)">
+        <div class="service-icon-box">⚙️</div>
+        <h4>Linux Automation Scripts</h4>
+        <p>One-command installers for VPS bootstrapping, MOTDs, daemon configuration and repeatable game infrastructure provisioning.</p>
+        <div class="service-pills">
+          <span class="service-pill">SHELL</span>
+          <span class="service-pill">BASH AUTOMATION</span>
+        </div>
+      </div>
+
+      <div class="service-card" onclick="activateService(this)">
+        <div class="service-icon-box">☁️</div>
+        <h4>VPS & Cloud Infrastructure</h4>
+        <p>Bare-metal hardening, Cloudflare tunnels, Nginx reverse-proxy and zero-downtime deployments for 24/7 gaming workloads.</p>
+        <div class="service-pills">
+          <span class="service-pill">CLOUDFLARE</span>
+          <span class="service-pill">NGINX</span>
+        </div>
       </div>
     </div>
 
@@ -893,6 +944,16 @@
       torch.style.left = e.clientX + 'px';
       torch.style.top = e.clientY + 'px';
     });
+
+    function activateCard(el) {
+      document.querySelectorAll('.team-card').forEach(card => card.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function activateService(el) {
+      document.querySelectorAll('.service-card').forEach(card => card.classList.remove('active-service'));
+      el.classList.add('active-service');
+    }
 
     const codeLines = [
       "// CoreMMC Production Cluster",
