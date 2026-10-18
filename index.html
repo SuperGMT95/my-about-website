@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoreMMC · SuperGMT95 & Leadership Squad</title>
+  <title>CoreMMC · Official Infrastructure & Full Squad</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
       --bg-card: rgba(10, 15, 29, 0.78);
       --bg-card-hover: rgba(15, 23, 42, 0.94);
       --border: rgba(255, 255, 255, 0.08);
-      --border-glow: rgba(56, 189, 248, 0.4);
       --accent: #38bdf8;
       --accent-glow: rgba(56, 189, 248, 0.45);
       --neon-cyan: #38bdf8;
@@ -185,19 +184,13 @@
       text-decoration: none;
     }
 
-    .logo-icon {
+    .logo-img-header {
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #050811;
-      font-weight: 800;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 19px;
-      box-shadow: 0 0 20px var(--accent-glow);
+      object-fit: cover;
+      box-shadow: 0 0 15px var(--accent-glow);
+      border: 1px solid rgba(56, 189, 248, 0.5);
     }
 
     .logo-text {
@@ -759,11 +752,11 @@
       color: var(--neon-cyan);
     }
 
-    /* SECTION 04: CORE LEADERSHIP TEAM (EXACT IMAGE 1 STYLE) */
-    .team-grid-3 {
+    /* FULL 5-MEMBER TEAM (OWNER + 2 CO-OWNERS + MANAGER + STAFF) */
+    .team-grid-5 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
       margin-bottom: 80px;
     }
 
@@ -771,7 +764,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 38px 24px 32px;
+      padding: 32px 18px 26px;
       text-align: center;
       position: relative;
       cursor: pointer;
@@ -814,19 +807,19 @@
 
     .avatar-wrapper {
       position: relative;
-      width: 95px;
-      height: 95px;
+      width: 86px;
+      height: 86px;
       border-radius: 50%;
       padding: 3px;
       background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-      margin-bottom: 20px;
-      box-shadow: 0 0 22px rgba(56, 189, 248, 0.35);
+      margin-bottom: 18px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .team-card:hover .avatar-wrapper, .team-card.active .avatar-wrapper {
       transform: scale(1.08);
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.7);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
     }
 
     .team-avatar-img {
@@ -840,22 +833,22 @@
 
     .team-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.45rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .team-role {
       display: inline-block;
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       font-family: 'Fira Code', monospace;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .role-owner {
@@ -870,10 +863,22 @@
       color: var(--neon-purple);
     }
 
+    .role-manager {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: var(--accent);
+    }
+
+    .role-staff {
+      background: rgba(52, 211, 153, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.5);
+      color: var(--neon-green);
+    }
+
     .team-subtext {
-      font-size: 0.92rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .callout-box {
@@ -999,6 +1004,7 @@
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+      border: 1px solid rgba(56, 189, 248, 0.4);
     }
 
     .footer-brand-name {
@@ -1068,15 +1074,27 @@
       color: var(--accent);
     }
 
+    @media (max-width: 1100px) {
+      .team-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     @media (max-width: 992px) {
       .hero-split, .about-journey-layout {
         grid-template-columns: 1fr;
       }
-      .team-grid-3, .services-grid, .nodes-grid {
+      .services-grid, .nodes-grid {
         grid-template-columns: 1fr;
       }
       .terminal-avatar-floating {
         left: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team-grid-5 {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -1101,7 +1119,7 @@
           <span class="sound-bar"></span>
           <span class="sound-bar"></span>
         </span>
-        <span id="songCounter">1 / 3 · AUTO-REPEAT</span>
+        <span id="songCounter">1 / 2 · REEL AUDIO</span>
       </div>
     </div>
   </div>
@@ -1110,15 +1128,15 @@
     <div class="container">
       <div class="nav-wrapper">
         <a href="#" class="logo-container">
-          <div class="logo-icon">C</div>
-          <div class="logo-text">CoreMMC <span>· Official</span></div>
+          <img src="https://i.ibb.co/HfbNPzg7/photo-2026-06-06-10-18-50.jpg" alt="CoreMMC Logo" class="logo-img-header">
+          <div class="logo-text">CoreMMC <span>· Hosting</span></div>
         </a>
         <nav>
           <a href="#about">About</a>
           <a href="#journey">Journey</a>
           <a href="#services">Services</a>
           <a href="#nodes">Hardware</a>
-          <a href="#team">Leadership Team</a>
+          <a href="#team">Our Team</a>
           <a href="https://coremmc.cloud" target="_blank" class="btn-header">Panel ↗</a>
         </nav>
       </div>
@@ -1154,11 +1172,11 @@
         </div>
         <h1 class="hero-heading">Architecting High-Speed <span class="gradient">Gaming Cloud & Bare-Metal</span> Nodes.</h1>
         <p class="hero-desc">
-          Founded and engineered by <strong>SuperGMT95</strong> alongside Co-Owners <strong>KingStone</strong> and <strong>NeoNinja</strong>. We build and maintain high-clock Ryzen dedicated instances with unthrottled single-thread power.
+          Founded and engineered by <strong>SuperGMT95</strong> alongside Co-Owners <strong>KingStone</strong> and <strong>NeoNinja</strong>, Manager <strong>Redrexy</strong>, and Staff <strong>Nawazu</strong>. We build and maintain high-clock Ryzen dedicated instances with unthrottled single-thread power.
         </p>
         <div style="display:flex; gap:16px; flex-wrap:wrap;">
           <a href="https://coremmc.cloud" target="_blank" style="padding:13px 26px; background:var(--accent); color:#050811; font-weight:700; border-radius:10px; text-decoration:none; box-shadow:0 0 25px var(--accent-glow);">Deploy Server <span>→</span></a>
-          <a href="#team" style="padding:13px 26px; background:var(--bg-card); border:1px solid var(--border); color:#fff; font-weight:600; border-radius:10px; text-decoration:none;">View Executive Team</a>
+          <a href="#team" style="padding:13px 26px; background:var(--bg-card); border:1px solid var(--border); color:#fff; font-weight:600; border-radius:10px; text-decoration:none;">View Entire Team</a>
         </div>
       </div>
 
@@ -1213,7 +1231,7 @@
           I turned a passion for high-performance Minecraft servers into a full-scale obsession with bare-metal clustering, Linux virtualization, and container automation.
         </p>
         <p>
-          Today, alongside <strong>KingStone</strong> and <strong>NeoNinja</strong>, I engineer and maintain high-density nodes powering gaming communities and creators across India and Southeast Asia.
+          Today, alongside <strong>KingStone</strong>, <strong>NeoNinja</strong>, <strong>Redrexy</strong>, and <strong>Nawazu</strong>, I engineer and maintain high-density nodes powering gaming communities and creators across India and Southeast Asia.
         </p>
         <div class="about-pills-row">
           <span class="about-pill">🇮🇳 India · Mumbai / Noida</span>
@@ -1357,41 +1375,65 @@
       </div>
     </div>
 
-    <!-- SECTION 04: CORE LEADERSHIP TEAM (LAST MEIN PLACED) -->
+    <!-- SECTION 04: FULL TEAM ROSTER (LAST MEIN PLACED) -->
     <section class="section-head" id="team">
-      <span class="section-tag">04 · CORE LEADERSHIP</span>
+      <span class="section-tag">04 · CORE LEADERSHIP & STAFF</span>
       <h2 class="section-title">CoreMMC Executive Team</h2>
     </section>
 
-    <div class="team-grid-3">
+    <div class="team-grid-5">
+      <!-- 1. SuperGMT95 (Founder & Owner) -->
       <div class="team-card active" onclick="activateCard(this)">
         <div class="avatar-wrapper">
           <img src="https://i.ibb.co/C5cWbV81/copilot-image-1740728804368.jpg" alt="SuperGMT95" class="team-avatar-img">
         </div>
         <div class="team-name">SuperGMT95</div>
         <span class="team-role role-owner">FOUNDER & OWNER</span>
-        <p class="team-subtext">Systems Architect, Infrastructure Engineering & CoreMMC Platform Lead</p>
+        <p class="team-subtext">Systems Architect & CoreMMC Lead</p>
       </div>
 
+      <!-- 2. KingStone (Co-Owner) -->
       <div class="team-card" onclick="activateCard(this)">
         <div class="avatar-wrapper">
           <img src="https://i.ibb.co/xSKTkqwb/Screenshot-2026-10-18-001314.png" alt="KingStone" class="team-avatar-img">
         </div>
         <div class="team-name">KingStone</div>
         <span class="team-role role-coowner">CO-OWNER</span>
-        <p class="team-subtext">Community Operations, Strategic Planning & Global Network Management</p>
+        <p class="team-subtext">Community Operations & Global Management</p>
       </div>
 
+      <!-- 3. NeoNinja (Co-Owner) -->
       <div class="team-card" onclick="activateCard(this)">
         <div class="avatar-wrapper">
           <img src="https://i.ibb.co/nq0wYDth/Screenshot-2026-10-18-001239.png" alt="NeoNinja" class="team-avatar-img">
         </div>
         <div class="team-name">NeoNinja</div>
         <span class="team-role role-coowner">CO-OWNER</span>
-        <p class="team-subtext">Node Deployments, Network Hardening & Anti-DDoS Architecture</p>
+        <p class="team-subtext">Node Deployments & Anti-DDoS Architecture</p>
+      </div>
+
+      <!-- 4. Redrexy (Manager) -->
+      <div class="team-card" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/JWM3FHht/Screenshot-2026-10-18-001748.png" alt="Redrexy" class="team-avatar-img">
+        </div>
+        <div class="team-name">Redrexy</div>
+        <span class="team-role role-manager">MANAGER</span>
+        <p class="team-subtext">Server Quality & Infrastructure Lead</p>
+      </div>
+
+      <!-- 5. Nawazu (Staff) -->
+      <div class="team-card" onclick="activateCard(this)">
+        <div class="avatar-wrapper">
+          <img src="https://i.ibb.co/QF37xPsZ/Screenshot-2026-10-18-001911.png" alt="Nawazu" class="team-avatar-img">
+        </div>
+        <div class="team-name">Nawazu</div>
+        <span class="team-role role-staff">STAFF MEMBER</span>
+        <p class="team-subtext">Client Support & Node Dispatch Squad</p>
       </div>
     </div>
 
+    <!-- COLLAB BANNER -->
     <div class="callout-box">
       <div class="callout-pill">● OPEN TO WORK · COLLABS · COMMUNITY</div>
       <h2>Got an idea for a <span class="gradient-txt">hosting tool</span>?<br>Let's build it together.</h2>
@@ -1404,11 +1446,12 @@
 
   </main>
 
+  <!-- FOOTER WITH COREMMC LOGO -->
   <footer>
     <div class="container">
       <div class="footer-top-row">
         <div class="footer-brand-box">
-          <img src="https://i.ibb.co/C5cWbV81/copilot-image-1740728804368.jpg" alt="CoreMMC" class="footer-avatar-mini">
+          <img src="https://i.ibb.co/HfbNPzg7/photo-2026-06-06-10-18-50.jpg" alt="CoreMMC Logo" class="footer-avatar-mini">
           <div class="footer-brand-name">CoreMMC Hosting</div>
         </div>
         <div class="footer-quick-links">
@@ -1420,7 +1463,7 @@
       </div>
 
       <div class="footer-sub-text">
-        © 2026 CoreMMC · SuperGMT95, KingStone & NeoNinja<br>
+        © 2026 CoreMMC · SuperGMT95, KingStone, NeoNinja, Redrexy & Nawazu<br>
         Engineered with Precision & Passion in India<br>
         <span class="highlight">Every node built with dedication, inspiration and strength</span>
       </div>
@@ -1459,16 +1502,12 @@
 
     const playlist = [
       {
-        title: "Synthwave Horizon",
-        url: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3"
+        title: "Insta Reel Vibes · Track 1",
+        url: "song1.mp3"
       },
       {
-        title: "Cyberpunk Drive",
-        url: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3"
-      },
-      {
-        title: "Lo-Fi Cloud Beats",
-        url: "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3"
+        title: "Insta Reel Bass · Track 2",
+        url: "song2.mp3"
       }
     ];
 
@@ -1483,7 +1522,7 @@
 
     function updateTrack() {
       songTitle.textContent = playlist[currentIndex].title;
-      songCounter.textContent = `${currentIndex + 1} / ${playlist.length} · AUTO-LOOP`;
+      songCounter.textContent = `${currentIndex + 1} / ${playlist.length} · REEL LOOP`;
     }
 
     function loadTrack(idx) {
