@@ -41,17 +41,20 @@
       position: relative;
     }
 
-    /* Giphy Background Wallpaper */
+    /* Clean, Sharp & Clear Background GIF Overlay */
     .bg-gif-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: linear-gradient(180deg, rgba(3, 7, 18, 0.92) 0%, rgba(3, 7, 18, 0.97) 100%), 
+      /* Gradient transparency ko kam kiya hai taaki GIF ekdum crystal-clear dikhe */
+      background: linear-gradient(180deg, rgba(3, 7, 18, 0.45) 0%, rgba(3, 7, 18, 0.65) 100%), 
                   url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTBoZzF2amxxcnliMjVjc3VxeTZnOGh2ejRucjkydjdkMXJmenZidSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/4rZA5D22301iMgrUNd/giphy.gif') center/cover no-repeat;
       z-index: -2;
       pointer-events: none;
+      opacity: 1; /* Full sharp visibility */
+      filter: none !important; /* Koi blur nahi rahega */
     }
 
     /* Interactive Cursor Spotlight Glow */
