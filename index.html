@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CoreMMC · Official Infrastructure & Full Squad</title>
+  <title>CoreMMC Hosting · Official Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,6 +41,7 @@
       position: relative;
     }
 
+    /* Giphy Background Wallpaper */
     .bg-gif-overlay {
       position: fixed;
       top: 0;
@@ -53,6 +54,7 @@
       pointer-events: none;
     }
 
+    /* Interactive Cursor Spotlight Glow */
     .cursor-torch {
       position: fixed;
       width: 500px;
@@ -71,6 +73,7 @@
       padding: 0 24px;
     }
 
+    /* Floating Cyber Audio Bar */
     .audio-player-bar {
       position: fixed;
       bottom: 24px;
@@ -161,6 +164,7 @@
       100% { height: 100%; }
     }
 
+    /* Navbar */
     header {
       position: sticky;
       top: 0;
@@ -236,6 +240,7 @@
       color: #050811 !important;
     }
 
+    /* ROLLING MARQUEE TICKER */
     .marquee-container {
       width: 100%;
       overflow: hidden;
@@ -278,6 +283,7 @@
       to { transform: translateX(-50%); }
     }
 
+    /* HERO SPLIT */
     .hero-split {
       padding: 80px 0 60px;
       display: grid;
@@ -337,52 +343,64 @@
       50% { opacity: 0.4; transform: scale(0.8); }
     }
 
+    /* TERMINAL CARD WITH OWNER & CO-OWNER TABS */
     .code-terminal-card {
       position: relative;
       background: rgba(10, 15, 26, 0.95);
       border: 1px solid rgba(56, 189, 248, 0.35);
       border-radius: 20px;
-      padding: 30px 24px 24px;
+      padding: 40px 24px 24px;
       box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.15);
       font-family: 'Fira Code', monospace;
     }
 
-    .terminal-avatar-floating {
+    /* Top Row With Owner & Both Co-Owners Avatars */
+    .terminal-leaders-bar {
       position: absolute;
       top: -30px;
-      left: -20px;
-      width: 78px;
-      height: 78px;
-      border-radius: 18px;
-      padding: 3px;
-      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+      left: 20px;
+      display: flex;
+      gap: 14px;
       z-index: 10;
     }
 
-    .terminal-avatar-img {
+    .floating-avatar-slot {
+      position: relative;
+      width: 65px;
+      height: 65px;
+      border-radius: 16px;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .floating-avatar-slot:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.9);
+    }
+
+    .slot-avatar-img {
       width: 100%;
       height: 100%;
-      border-radius: 15px;
+      border-radius: 14px;
       object-fit: cover;
       display: block;
     }
 
-    .avatar-check {
+    .avatar-badge-tag {
       position: absolute;
-      bottom: -4px;
-      right: -4px;
-      background: #10b981;
-      color: #fff;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      border: 2px solid #030712;
-      box-shadow: 0 0 10px #10b981;
+      bottom: -6px;
+      right: -6px;
+      background: #030712;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 1px 4px;
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
     }
 
     .terminal-status-tags {
@@ -422,7 +440,6 @@
       color: #64748b;
       font-size: 0.85rem;
       margin-bottom: 15px;
-      padding-left: 50px;
     }
 
     .terminal-code-body {
@@ -449,6 +466,7 @@
       font-size: 0.76rem;
     }
 
+    /* SECTION HEADERS */
     .section-head {
       margin: 80px 0 35px;
     }
@@ -470,6 +488,7 @@
       color: #fff;
     }
 
+    /* ABOUT & JOURNEY SECTION */
     .about-journey-layout {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -628,6 +647,7 @@
       line-height: 1.6;
     }
 
+    /* SERVICES GRID */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -704,6 +724,7 @@
       font-weight: 600;
     }
 
+    /* HARDWARE FLEET */
     .nodes-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -752,7 +773,7 @@
       color: var(--neon-cyan);
     }
 
-    /* FULL 5-MEMBER TEAM (OWNER + 2 CO-OWNERS + MANAGER + STAFF) */
+    /* FULL 5-MEMBER TEAM (OWNER + BOTH CO-OWNERS + MANAGER + STAFF) */
     .team-grid-5 {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -881,6 +902,7 @@
       line-height: 1.45;
     }
 
+    /* COLLAB CALLOUT BANNER */
     .callout-box {
       background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(192, 132, 252, 0.06) 100%);
       border: 1px solid rgba(56, 189, 248, 0.35);
@@ -977,6 +999,7 @@
       transform: translateY(-2px);
     }
 
+    /* FOOTER HOPINGBOYZ STYLE */
     footer {
       border-top: 1px solid var(--border);
       padding: 60px 0 40px;
@@ -1087,14 +1110,15 @@
       .services-grid, .nodes-grid {
         grid-template-columns: 1fr;
       }
-      .terminal-avatar-floating {
-        left: 20px;
-      }
     }
 
     @media (max-width: 768px) {
       .team-grid-5 {
         grid-template-columns: 1fr;
+      }
+      .terminal-leaders-bar {
+        position: static;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -1106,6 +1130,7 @@
 
   <audio id="audioEngine" preload="auto"></audio>
 
+  <!-- Floating Audio Bar -->
   <div class="audio-player-bar">
     <button class="audio-btn prev-next" onclick="prevSong()" title="Previous">⏮</button>
     <button class="audio-btn" id="playBtn" onclick="togglePlay()" title="Play / Pause">▶</button>
@@ -1119,11 +1144,12 @@
           <span class="sound-bar"></span>
           <span class="sound-bar"></span>
         </span>
-        <span id="songCounter">1 / 2 · REEL AUDIO</span>
+        <span id="songCounter">1 / 2 · REEL LOOP</span>
       </div>
     </div>
   </div>
 
+  <!-- NAVBAR -->
   <header>
     <div class="container">
       <div class="nav-wrapper">
@@ -1143,6 +1169,7 @@
     </div>
   </header>
 
+  <!-- ROLLING MARQUEE TICKER -->
   <div class="marquee-container">
     <div class="marquee-content">
       <div class="marquee-item"><span class="marquee-dot"></span> 256GB DDR5 ECC RAM POOLS</div>
@@ -1152,6 +1179,7 @@
       <div class="marquee-item"><span class="marquee-dot"></span> BEDROCK & JAVA FLUID PARITY</div>
       <div class="marquee-item"><span class="marquee-dot"></span> AMD RYZEN 9 7950X DEDICATED HARDWARE</div>
       <div class="marquee-item"><span class="marquee-dot"></span> CLOUD ARCHITECTURE & VM MANAGEMENT</div>
+      <!-- Loop Duplicate -->
       <div class="marquee-item"><span class="marquee-dot"></span> 256GB DDR5 ECC RAM POOLS</div>
       <div class="marquee-item"><span class="marquee-dot"></span> SUB-15MS MUMBAI & NOIDA ROUTES</div>
       <div class="marquee-item"><span class="marquee-dot"></span> ZERO PACKET LOSS & LOCKED 20 TPS</div>
@@ -1164,6 +1192,7 @@
 
   <main class="container">
 
+    <!-- HERO SECTION WITH TOP OWNER + BOTH CO-OWNERS EMBEDDED DIRECTLY ON CARD -->
     <section class="hero-split" id="about">
       <div>
         <div class="badge-pill">
@@ -1172,18 +1201,33 @@
         </div>
         <h1 class="hero-heading">Architecting High-Speed <span class="gradient">Gaming Cloud & Bare-Metal</span> Nodes.</h1>
         <p class="hero-desc">
-          Founded and engineered by <strong>SuperGMT95</strong> alongside Co-Owners <strong>KingStone</strong> and <strong>NeoNinja</strong>, Manager <strong>Redrexy</strong>, and Staff <strong>Nawazu</strong>. We build and maintain high-clock Ryzen dedicated instances with unthrottled single-thread power.
+          Official platform of <strong>CoreMMC Hosting</strong>. Built and operated by Founder <strong>SuperGMT95</strong> alongside Co-Owners <strong>KingStone</strong> and <strong>NeoNinja</strong>, Manager <strong>Redrexy</strong>, and Staff <strong>Nawazu</strong>. Unthrottled single-thread processing and low-latency domestic routes across India.
         </p>
         <div style="display:flex; gap:16px; flex-wrap:wrap;">
           <a href="https://coremmc.cloud" target="_blank" style="padding:13px 26px; background:var(--accent); color:#050811; font-weight:700; border-radius:10px; text-decoration:none; box-shadow:0 0 25px var(--accent-glow);">Deploy Server <span>→</span></a>
-          <a href="#team" style="padding:13px 26px; background:var(--bg-card); border:1px solid var(--border); color:#fff; font-weight:600; border-radius:10px; text-decoration:none;">View Entire Team</a>
+          <a href="#team" style="padding:13px 26px; background:var(--bg-card); border:1px solid var(--border); color:#fff; font-weight:600; border-radius:10px; text-decoration:none;">Meet Full Squad</a>
         </div>
       </div>
 
+      <!-- TS CODING CARD WITH TOP ROW: OWNER + BOTH CO-OWNERS -->
       <div class="code-terminal-card">
-        <div class="terminal-avatar-floating">
-          <img src="https://i.ibb.co/C5cWbV81/copilot-image-1740728804368.jpg" alt="SuperGMT95" class="terminal-avatar-img">
-          <div class="avatar-check">✓</div>
+        <!-- TOP ROW AVATARS: OWNER + CO-OWNER 1 + CO-OWNER 2 -->
+        <div class="terminal-leaders-bar">
+          <!-- SuperGMT95 -->
+          <div class="floating-avatar-slot" title="SuperGMT95 - Owner" onclick="selectLeader('supergmt95')">
+            <img src="https://i.ibb.co/C5cWbV81/copilot-image-1740728804368.jpg" alt="SuperGMT95" class="slot-avatar-img">
+            <div class="avatar-badge-tag">OWNER</div>
+          </div>
+          <!-- KingStone -->
+          <div class="floating-avatar-slot" title="KingStone - Co-Owner" onclick="selectLeader('kingstone')">
+            <img src="https://i.ibb.co/xSKTkqwb/Screenshot-2026-10-18-001314.png" alt="KingStone" class="slot-avatar-img">
+            <div class="avatar-badge-tag">CO-OWN</div>
+          </div>
+          <!-- NeoNinja -->
+          <div class="floating-avatar-slot" title="NeoNinja - Co-Owner" onclick="selectLeader('neoninja')">
+            <img src="https://i.ibb.co/nq0wYDth/Screenshot-2026-10-18-001239.png" alt="NeoNinja" class="slot-avatar-img">
+            <div class="avatar-badge-tag">CO-OWN</div>
+          </div>
         </div>
 
         <div class="terminal-status-tags">
@@ -1194,22 +1238,19 @@
         <div class="terminal-path">~ /coremmc/about.ts</div>
 
         <div class="terminal-code-body">
-          <p><span class="c-comment">// 2026 · Building next-gen hosting</span></p>
-          <p><span class="c-keyword">const</span> <span class="c-var">supergmt95</span> = {</p>
-          <p>&nbsp;&nbsp;role: <span class="c-str">'Owner & Cloud Architect'</span>,</p>
-          <p>&nbsp;&nbsp;based: <span class="c-str">'India · Mumbai / Noida'</span>,</p>
-          <p>&nbsp;&nbsp;stack: [<span class="c-str">'Ryzen 9'</span>, <span class="c-str">'Docker'</span>, <span class="c-str">'Linux'</span>, <span class="c-str">'Node.js'</span>],</p>
-          <p>&nbsp;&nbsp;focus: [</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">'Pelican Panels'</span>,</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">'VM Infrastructure'</span>,</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">'Zero-Lag TPS'</span>,</p>
-          <p>&nbsp;&nbsp;],</p>
-          <p>&nbsp;&nbsp;stats: {</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;nodes: <span class="c-num">128</span>,</p>
+          <p><span class="c-comment">// 2026 · CoreMMC Production Infrastructure</span></p>
+          <p><span class="c-keyword">const</span> <span class="c-var">coremmcLeadership</span> = {</p>
+          <p>&nbsp;&nbsp;owner: <span class="c-str">'SuperGMT95'</span>,</p>
+          <p>&nbsp;&nbsp;coOwners: [<span class="c-str">'KingStone'</span>, <span class="c-str">'NeoNinja'</span>],</p>
+          <p>&nbsp;&nbsp;manager: <span class="c-str">'Redrexy'</span>,</p>
+          <p>&nbsp;&nbsp;staff: <span class="c-str">'Nawazu'</span>,</p>
+          <p>&nbsp;&nbsp;cluster: {</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;cpu: <span class="c-str">'Ryzen 9 7950X Dedicated'</span>,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;ram: <span class="c-str">'256GB DDR5 Reg'</span>,</p>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;tps: <span class="c-num">20.0</span>,</p>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;ping: <span class="c-str">'&lt; 15ms'</span>,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;routes: [<span class="c-str">'Mumbai'</span>, <span class="c-str">'Noida'</span>, <span class="c-str">'Singapore'</span>],</p>
           <p>&nbsp;&nbsp;},</p>
-          <p>&nbsp;&nbsp;isAvailable: () =&gt; <span class="c-bool">true</span>,</p>
+          <p>&nbsp;&nbsp;isOperational: () =&gt; <span class="c-bool">true</span>,</p>
           <p>};</p>
         </div>
 
@@ -1217,6 +1258,7 @@
       </div>
     </section>
 
+    <!-- SECTION 01: ABOUT & GLOWING TIMELINE -->
     <section class="section-head" id="journey">
       <span class="section-tag">01 · MY JOURNEY</span>
       <h2 class="section-title">The Path to Production Infrastructure</h2>
@@ -1231,7 +1273,7 @@
           I turned a passion for high-performance Minecraft servers into a full-scale obsession with bare-metal clustering, Linux virtualization, and container automation.
         </p>
         <p>
-          Today, alongside <strong>KingStone</strong>, <strong>NeoNinja</strong>, <strong>Redrexy</strong>, and <strong>Nawazu</strong>, I engineer and maintain high-density nodes powering gaming communities and creators across India and Southeast Asia.
+          Today, alongside Co-Owners <strong>KingStone</strong> and <strong>NeoNinja</strong>, Manager <strong>Redrexy</strong>, and Staff <strong>Nawazu</strong>, I engineer and maintain high-density nodes powering gaming communities and creators across India and Southeast Asia.
         </p>
         <div class="about-pills-row">
           <span class="about-pill">🇮🇳 India · Mumbai / Noida</span>
@@ -1271,6 +1313,7 @@
       </div>
     </div>
 
+    <!-- SECTION 02: SERVICES & SPECIALTIES -->
     <section class="section-head" id="services">
       <span class="section-tag">02 · WHAT WE BUILD</span>
       <h2 class="section-title">Services & Specialties</h2>
@@ -1338,6 +1381,7 @@
       </div>
     </div>
 
+    <!-- SECTION 03: HARDWARE FLEET -->
     <section class="section-head" id="nodes">
       <span class="section-tag">03 · PHYSICAL FLEET</span>
       <h2 class="section-title">Hardware Infrastructure</h2>
@@ -1375,7 +1419,7 @@
       </div>
     </div>
 
-    <!-- SECTION 04: FULL TEAM ROSTER (LAST MEIN PLACED) -->
+    <!-- SECTION 04: FULL TEAM ROSTER (LAST MEIN PLACED: OWNER + BOTH CO-OWNERS + MANAGER + STAFF) -->
     <section class="section-head" id="team">
       <span class="section-tag">04 · CORE LEADERSHIP & STAFF</span>
       <h2 class="section-title">CoreMMC Executive Team</h2>
@@ -1446,7 +1490,7 @@
 
   </main>
 
-  <!-- FOOTER WITH COREMMC LOGO -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-top-row">
@@ -1484,12 +1528,14 @@
   </footer>
 
   <script>
+    // Torch Follower
     const torch = document.getElementById('torchGlow');
     window.addEventListener('mousemove', (e) => {
       torch.style.left = e.clientX + 'px';
       torch.style.top = e.clientY + 'px';
     });
 
+    // Card Selection
     function activateCard(el) {
       document.querySelectorAll('.team-card').forEach(card => card.classList.remove('active'));
       el.classList.add('active');
@@ -1500,14 +1546,28 @@
       el.classList.add('active-service');
     }
 
+    // New 2 Songs Playlist
+    /*
+      ===============================================================
+      EXACT 2 SONGS FROM YOUR PIXABAY SCREENSHOT:
+      Track 1: "Cyberpunk" by leberch (1:40, Beautiful Plays)
+      Track 2: "Cyberpunk - Cyberpunk music" by ikoliks_aj (2:00, Synthwave)
+      ===============================================================
+    */
     const playlist = [
       {
-        title: "Insta Reel Vibes · Track 1",
-        url: "song1.mp3"
+        title: "Cyberpunk · leberch",
+        genre: "Beautiful Plays",
+        duration: "1:40",
+        url: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3",
+        fallback: "song1.mp3"
       },
       {
-        title: "Insta Reel Bass · Track 2",
-        url: "song2.mp3"
+        title: "Cyberpunk Music · ikoliks_aj",
+        genre: "Synthwave",
+        duration: "2:00",
+        url: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3",
+        fallback: "song2.mp3"
       }
     ];
 
@@ -1582,3 +1642,4 @@
   </script>
 </body>
 </html>
+```[cite: 26, 28]
